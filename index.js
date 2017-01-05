@@ -1,6 +1,7 @@
 var express = require("express");
 var elasticsearch = require('elasticsearch')
 var hbs = require('hbs');
+var exphbs  = require('express-handlebars');
 
 var app = express();
 
@@ -11,7 +12,15 @@ var client = elasticsearch.Client({
 var port = process.env.PORT || 3000;
 app.listen(port);
 
-app.set("view engine", "hbs");
+app.set("view engine", ".hbs");
+
+// Set extension for view files as .hbs
+
+app.engine('.hbs', exphbs({extname: '.hbs'}));
+
+// Set the path directory for view templates
+
+app.set('views', __dirname + '/public/views');
 
 app.get("/", (req, res) => {
   res.render('index')
