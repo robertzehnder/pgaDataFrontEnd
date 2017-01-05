@@ -14,16 +14,8 @@ app.listen(port);
 
 app.set("view engine", ".hbs");
 
-// Set extension for view files as .hbs
-
-app.engine('.hbs', exphbs({extname: '.hbs'}));
-
-// Set the path directory for view templates
-
-app.set('views', __dirname + '/public/views');
-
 app.get("/", (req, res) => {
-  res.render('index')
+  res.render('./views/index.hbs')
 })
 
 app.get("/analytics", (req, res) => {
