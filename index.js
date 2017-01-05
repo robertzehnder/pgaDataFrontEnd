@@ -4,10 +4,10 @@ var elasticsearch = require('elasticsearch')
 var app = express();
 
 var client = elasticsearch.Client({
-  host: 'https://elastic:sK6vNw9d5JrvzsVb4zv1v07K@52e10366c0a54c2ae88a2ece0b28cc1b.us-east-1.aws.found.io:9243' 
+  host: 'https://elastic:sK6vNw9d5JrvzsVb4zv1v07K@52e10366c0a54c2ae88a2ece0b28cc1b.us-east-1.aws.found.io:9243'
 })
 
-app.listen(4000, () => {
+app.listen('https://fathomless-wildwood-37341.herokuapp.com', () => {
   console.log("app listening on port 4000");
 });
 
