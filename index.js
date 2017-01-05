@@ -1,5 +1,6 @@
 var express = require("express");
 var elasticsearch = require('elasticsearch')
+var hbs = require('hbs');
 
 var app = express();
 
